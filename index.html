@@ -1,1 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>3D Print Catalog</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
+<body>
+  <header class="header">
+    <div class="wrap">
+      <div class="brand">
+        <div class="logo">3D</div>
+        <div>
+          <h1>3D Print Catalog</h1>
+          <p class="sub">Browse items • Tap to text an order • Local pickup on base</p>
+        </div>
+      </div>
+
+      <div class="ctaRow">
+        <a class="btn primary" id="textGeneral" href="#">Text to Order (General)</a>
+        <a class="btn" id="callGeneral" href="#">Call</a>
+      </div>
+
+      <div class="controls">
+        <input id="search" type="search" placeholder="Search (e.g., 'helmet', 'fidget', 'dragon')…" />
+        <select id="category">
+          <option value="all">All Categories</option>
+        </select>
+        <select id="sort">
+          <option value="featured">Sort: Featured</option>
+          <option value="priceAsc">Price: Low → High</option>
+          <option value="priceDesc">Price: High → Low</option>
+          <option value="nameAsc">Name: A → Z</option>
+        </select>
+      </div>
+
+      <div class="note">
+        <strong>How ordering works:</strong> Tap <em>Text to Order</em> on any item. Your phone will open SMS with a pre-filled message.
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="status" class="status">Loading catalog…</section>
+    <section id="grid" class="grid" aria-live="polite"></section>
+
+    <section class="footerCard">
+      <h2>Custom Requests</h2>
+      <p>
+        Want something specific? Send a photo/link or describe what you want. I can quote based on size, material, and print time.
+      </p>
+      <ul>
+        <li>Pickup: on base (local)</li>
+        <li>Turnaround: usually 1–7 days depending on size and queue</li>
+        <li>Payment: cash / PayPal / (whatever you prefer)</li>
+      </ul>
+      <div class="ctaRow">
+        <a class="btn primary" id="textCustom" href="#">Text: Custom Quote</a>
+      </div>
+      <p class="fine">
+        Disclaimer: Personal side business. Not affiliated with the U.S. Government/DoD.
+      </p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
