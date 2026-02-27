@@ -51,23 +51,25 @@
       "size": "Varies",
       "leadTimeDays": 7,
       "featured": false,
-      "description": "Helmets are custom quoted based on model + size + finishing. Tap WhatsApp for a quote.",
+      "image": "images/cosplay-helmet.png",
+      "description": "Custom cosplay helmets printed on-demand from a large catalog (600+ options).",
       "tags": ["helmet", "cosplay", "custom"]
     }
   ],
   "community_picks": [
     {
       "id": "mw-2230811",
-      "name": "Meowth Lucky Cat (all sep) — Pokémon Collection",
+      "name": "DerpyMon - Pokemon Parody",
       "source": "MakerWorld",
       "url": "https://makerworld.com/en/models/2230811-h2c-u1-pokemon-collection-meowth-lucky-cat-all-sep",
       "notes": "Multi-part model. Note: Pokémon is copyrighted—print/sell only if license allows and you’re comfortable with IP risk."
     },
     {
       "id": "mw-2286961",
-      "name": "Flexible Fabric-Style World Flags v2.0",
+      "name": "Flexible World Flags",
       "source": "MakerWorld",
       "url": "https://makerworld.com/en/models/2286961-flexible-fabric-style-world-flags-v2-0",
+      "image": "images/Flexi-Flags.jpg",
       "notes": "Flexible/fabric-style flags. Great for offices/lockers. Confirm scaling + filament choice."
     },
     {
