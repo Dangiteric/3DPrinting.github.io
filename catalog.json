@@ -5,23 +5,7 @@
     "location": "Local pickup on base",
     "leadTime": "1–7 days"
   },
-   "community_picks": [
-  {
-    "id": "pick-001",
-    "name": "Infinity Cube (example pick)",
-    "source": "Printables",
-    "url": "https://www.printables.com/model/XXXXX-your-model-here",
-    "notes": "Print-in-place / great desk fidget"
-  },
-  {
-    "id": "pick-002",
-    "name": "Controller Stand (example pick)",
-    "source": "MakerWorld",
-    "url": "https://makerworld.com/en/models/XXXXX-your-model-here",
-    "notes": "Good quick print"
-  }
-]
-  "items": [
+   "items": [
     {
       "id": "fidget-gear-cube",
       "name": "Fidget Gear Cube",
