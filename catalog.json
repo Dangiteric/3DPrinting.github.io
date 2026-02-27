@@ -15,7 +15,7 @@
       "size": "Custom",
       "leadTimeDays": 7,
       "featured": true,
-      "image": "images/cosplay-helmets.png",
+      "image": "images/cosplayhelmets.png",
       "description": "Custom cosplay helmets printed on demand. Price depends on model, size.",
       "tags": ["helmet", "cosplay", "custom"]
     }
