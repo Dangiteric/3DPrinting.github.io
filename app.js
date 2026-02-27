@@ -48,11 +48,11 @@ function buildWhatsAppLink(phoneE164, message) {
 
 // Signal deep link works best on mobile; desktop is inconsistent.
 // We’ll still provide a best-effort desktop contact link.
-function buildSignalLink(phoneE164, message) {
-  const text = encodeURIComponent(message);
-  if (isMobileDevice()) {
-    return `sgnl://send?phone=${phoneE164}&text=${text}`;
-  }
+function buildSignalChatLink(phoneE164) {
+  // Signal’s supported public link format:
+  // https://signal.me/#p/+19122708498
+  return `https://signal.me/#p/${encodeURIComponent(phoneE164)}`;
+}
   return `https://signal.me/#p/${encodeURIComponent(phoneE164)}`;
 }
 
