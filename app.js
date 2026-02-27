@@ -86,25 +86,37 @@ async function copyToClipboard(text) {
  * - Tries to open Signal (deep link on mobile)
  * - After a short delay, opens WhatsApp as fallback (in a new tab)
  */
-function attachSignalFallback(anchorEl, signalUrl, waUrl, messageToCopy) {
+function attachSignalHandler(anchorEl, phoneE164, waUrl, messageToSend) {
   if (!anchorEl) return;
 
   anchorEl.addEventListener("click", async (e) => {
     e.preventDefault();
 
-    const copied = await copyToClipboard(messageToCopy);
-    if (copied) showToast("Message copied. Opening Signal…");
-    else showToast("Opening Signal…");
+    // Best experience on mobile: use share sheet if available
+    if (isMobileDevice() && navigator.share) {
+      try {
+        await navigator.share({ text: messageToSend });
+        showToast("Shared! If Signal didn’t appear, try the Signal link instead.", 2200);
+        return;
+      } catch {
+        // user canceled or share failed; fall through to copy+open
+      }
+    }
 
-    // Try Signal first
-    window.location.href = signalUrl;
+    // Always copy so the user can paste in Signal
+    const copied = await copyToClipboard(messageToSend);
+    if (copied) showToast("Message copied — opening Signal…");
+    else showToast("Opening Signal… (copy manually if needed)", 2200);
 
-    // Only fallback to WhatsApp on desktop (Signal deep links are most flaky there)
+    // Open Signal chat link
+    window.open(buildSignalChatLink(phoneE164), "_blank", "noopener");
+
+    // Desktop fallback: Signal is often clunky from web; open WhatsApp backup
     if (!isMobileDevice()) {
       setTimeout(() => {
-        showToast("If Signal didn’t open, WhatsApp is opening…", 2200);
+        showToast("If Signal isn’t working on desktop, WhatsApp is opening…", 2200);
         window.open(waUrl, "_blank", "noopener");
-      }, 950);
+      }, 900);
     }
   });
 }
