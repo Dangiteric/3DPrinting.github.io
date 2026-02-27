@@ -1,11 +1,11 @@
 {
   "seller": {
     "name": "Eric's 3D Prints",
-    "phoneE164": "+19122708498",
+    "phoneE164": "+4915123456789",
     "location": "Local pickup on base",
     "leadTime": "1–7 days"
   },
-   "items": [
+  "items": [
     {
       "id": "fidget-gear-cube",
       "name": "Fidget Gear Cube",
@@ -51,8 +51,31 @@
       "size": "Varies",
       "leadTimeDays": 7,
       "featured": false,
-      "description": "Helmets are custom quoted based on model + size + finishing. Tap WhatsApp/Signal for a quote.",
+      "description": "Helmets are custom quoted based on model + size + finishing. Tap WhatsApp for a quote.",
       "tags": ["helmet", "cosplay", "custom"]
+    }
+  ],
+  "community_picks": [
+    {
+      "id": "mw-2230811",
+      "name": "Meowth Lucky Cat (all sep) — Pokémon Collection",
+      "source": "MakerWorld",
+      "url": "https://makerworld.com/en/models/2230811-h2c-u1-pokemon-collection-meowth-lucky-cat-all-sep",
+      "notes": "Multi-part model. Note: Pokémon is copyrighted—print/sell only if license allows and you’re comfortable with IP risk."
+    },
+    {
+      "id": "mw-2286961",
+      "name": "Flexible Fabric-Style World Flags v2.0",
+      "source": "MakerWorld",
+      "url": "https://makerworld.com/en/models/2286961-flexible-fabric-style-world-flags-v2-0",
+      "notes": "Flexible/fabric-style flags. Great for offices/lockers. Confirm scaling + filament choice."
+    },
+    {
+      "id": "mw-691010",
+      "name": "Modular Badge Holders (RSA Card)",
+      "source": "MakerWorld",
+      "url": "https://makerworld.com/en/models/691010-modular-badge-holders-rsa-card?from=search",
+      "notes": "Perfect for base use. Ask for card type + attachment (clip/lanyard)."
     }
   ]
 }
