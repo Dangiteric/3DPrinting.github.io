@@ -99,11 +99,13 @@ function attachSignalFallback(anchorEl, signalUrl, waUrl, messageToCopy) {
     // Try Signal first
     window.location.href = signalUrl;
 
-    // Fallback to WhatsApp if Signal doesn't open
-    setTimeout(() => {
-      showToast("If Signal didn’t open, WhatsApp is opening…", 2200);
-      window.open(waUrl, "_blank", "noopener");
-    }, 950);
+    // Only fallback to WhatsApp on desktop (Signal deep links are most flaky there)
+    if (!isMobileDevice()) {
+      setTimeout(() => {
+        showToast("If Signal didn’t open, WhatsApp is opening…", 2200);
+        window.open(waUrl, "_blank", "noopener");
+      }, 950);
+    }
   });
 }
 
