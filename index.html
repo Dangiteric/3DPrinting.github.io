@@ -44,8 +44,21 @@
 
   <main class="wrap">
     <section id="status" class="status">Loading catalog…</section>
+
+    <!-- Your own catalog items -->
     <section id="grid" class="grid" aria-live="polite"></section>
 
+    <!-- Featured community picks -->
+    <section class="footerCard" id="featured-picks">
+      <h2>Featured Community Picks</h2>
+      <p class="fine">Tap a pick to view the model, or request it directly via WhatsApp.</p>
+      <div id="picksGrid" class="grid"></div>
+      <p class="fine">
+        Note: I only print models consistent with their license/permissions.
+      </p>
+    </section>
+
+    <!-- Browse community sites -->
     <section class="footerCard" id="community-models">
       <h2>Browse Community Models (Printables / MakerWorld)</h2>
       <p>
@@ -71,12 +84,9 @@
       <div class="ctaRow" style="margin-top:12px;">
         <a class="btn primary" id="waFromLink" href="#">Send Model Link (WhatsApp)</a>
       </div>
-
-      <p class="fine">
-        Note: I only print models consistent with their license/permissions.
-      </p>
     </section>
 
+    <!-- Custom requests + privacy -->
     <section class="footerCard" id="custom-requests">
       <h2>Custom Requests</h2>
       <p>
@@ -96,11 +106,11 @@
 
       <h3 class="h3">Prefer Signal?</h3>
       <p class="fine">
-        Signal doesn’t reliably support pre-filled messages from a website. If you tap Signal below,
-        I’ll copy the message to your clipboard and open my Signal contact—just paste the message in chat.
+        Signal doesn’t reliably support pre-filled messages from a website.
+        If you tap Signal below, I’ll copy the message to your clipboard and open my Signal contact—just paste the message in chat.
       </p>
       <div class="ctaRow">
-        <a class="btn" id="signalOptional" href="#" rel="noopener">Contact via Signal (Copy + Open)</a>
+        <a class="btn" id="signalOptional" href="#">Contact via Signal (Copy + Open)</a>
       </div>
 
       <p class="fine">
@@ -113,7 +123,7 @@
     </section>
   </main>
 
-  <!-- Toast for “extra clean” UX -->
+  <!-- Toast -->
   <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
   <script src="app.js"></script>
