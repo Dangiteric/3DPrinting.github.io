@@ -5,8 +5,7 @@
     "location": "Local pickup on base",
     "leadTime": "1–7 days"
   },
- 
-  "community_picks": [
+   "community_picks": [
   {
     "id": "pick-001",
     "name": "Infinity Cube (example pick)",
