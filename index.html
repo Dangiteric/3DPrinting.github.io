@@ -14,12 +14,13 @@
         <div class="logo">3D</div>
         <div>
           <h1>3D Print Catalog</h1>
-          <p class="sub">Browse items • Tap to text an order • Local pickup on base</p>
+          <p class="sub">Browse items • Message to order • Local pickup on base</p>
         </div>
       </div>
 
       <div class="ctaRow">
-        <a class="btn primary" id="textGeneral" href="#">Text to Order (General)</a>
+        <a class="btn primary" id="waGeneral" href="#">WhatsApp</a>
+        <a class="btn" id="signalGeneral" href="#">Signal</a>
         <a class="btn" id="callGeneral" href="#">Call</a>
       </div>
 
@@ -37,7 +38,7 @@
       </div>
 
       <div class="note">
-        <strong>How ordering works:</strong> Tap <em>Text to Order</em> on any item. Your phone will open SMS with a pre-filled message.
+        <strong>How ordering works:</strong> Tap WhatsApp/Signal on an item. Your app opens with a pre-filled message. I confirm price + timeframe before printing.
       </div>
     </div>
   </header>
@@ -46,7 +47,39 @@
     <section id="status" class="status">Loading catalog…</section>
     <section id="grid" class="grid" aria-live="polite"></section>
 
-    <section class="footerCard">
+    <section class="footerCard" id="community-models">
+      <h2>Browse Community Models (Printables / MakerWorld)</h2>
+      <p>
+        Want something that isn’t listed above? Browse community libraries and send me a model link.
+        I’ll confirm licensing/printability and then quote based on size, material, and print time.
+      </p>
+
+      <div class="ctaRow">
+        <a class="btn" href="https://www.printables.com/" target="_blank" rel="noopener">Open Printables.com</a>
+        <a class="btn" href="https://makerworld.com/" target="_blank" rel="noopener">Open MakerWorld.com</a>
+      </div>
+
+      <div class="note" style="margin-top:12px;">
+        <strong>How to request a print:</strong>
+        <ol style="margin:8px 0 0; padding-left:18px; color: inherit;">
+          <li>Find a model you like on Printables or MakerWorld.</li>
+          <li>Copy the model link (URL).</li>
+          <li>Tap “Send Model Link” and paste the URL + size + color + quantity.</li>
+          <li>I’ll reply with a quote and estimated turnaround.</li>
+        </ol>
+      </div>
+
+      <div class="ctaRow" style="margin-top:12px;">
+        <a class="btn primary" id="waFromLink" href="#">Send Model Link</a>
+        <a class="btn" id="signalFromLink" href="#">Send via Signal</a>
+      </div>
+
+      <p class="fine">
+        Note: I only print models consistent with their license/permissions. If a model is “Non-Commercial,” I may only be able to print it at-cost or may decline depending on the terms.
+      </p>
+    </section>
+
+    <section class="footerCard" id="custom-requests">
       <h2>Custom Requests</h2>
       <p>
         Want something specific? Send a photo/link or describe what you want. I can quote based on size, material, and print time.
@@ -54,47 +87,24 @@
       <ul>
         <li>Pickup: on base (local)</li>
         <li>Turnaround: usually 1–7 days depending on size and queue</li>
-        <li>Payment: cash / PayPal / (whatever you prefer)</li>
+        <li>Payment: cash / PayPal / (your preference)</li>
       </ul>
       <div class="ctaRow">
-        <a class="btn primary" id="textCustom" href="#">Text: Custom Quote</a>
+        <a class="btn primary" id="waCustom" href="#">Custom Quote</a>
+        <a class="btn" id="signalCustom" href="#">Signal Quote</a>
       </div>
+
+      <p class="fine">
+        Privacy: This site doesn’t collect logins, cookies, or payment info. Buttons open WhatsApp/Signal on your device. If you message me, I only use your info to reply about your print request.
+      </p>
       <p class="fine">
         Disclaimer: Personal side business. Not affiliated with the U.S. Government/DoD.
       </p>
     </section>
-    <section class="footerCard" id="community-models">
-  <h2>Browse Community Models (Printables / MakerWorld)</h2>
-  <p>
-    Want something that isn’t listed above? You can browse community libraries and send me a link.
-    I’ll confirm licensing/printability and then quote based on size, material, and print time.
-  </p>
-
-  <div class="ctaRow">
-    <a class="btn" href="https://www.printables.com/" target="_blank" rel="noopener">Open Printables.com</a>
-    <a class="btn" href="https://makerworld.com/" target="_blank" rel="noopener">Open MakerWorld.com</a>
-  </div>
-
-  <div class="note" style="margin-top:12px;">
-    <strong>How to request a print:</strong>
-    <ol style="margin:8px 0 0; padding-left:18px; color: inherit;">
-      <li>Find a model you like on Printables or MakerWorld.</li>
-      <li>Copy the model link (URL).</li>
-      <li>Text me the link + desired size + color + quantity.</li>
-      <li>I’ll confirm cost + timeframe before printing.</li>
-    </ol>
-  </div>
-
-  <div class="ctaRow" style="margin-top:12px;">
-    <a class="btn primary" id="textFromLink" href="#">Text a Model Link</a>
-  </div>
-
-  <p class="fine">
-    Note: I only print models that allow printing/sharing under their license. If a model is “Non-Commercial,”
-    I may only be able to print it at-cost or may decline depending on the terms.
-  </p>
-</section>
   </main>
+
+  <!-- Toast container for “extra clean” UX -->
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
   <script src="app.js"></script>
 </body>
