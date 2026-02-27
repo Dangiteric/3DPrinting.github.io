@@ -60,21 +60,38 @@ function renderPicks(picks, seller) {
   grid.innerHTML = "";
 
   for (const p of picks) {
-    const msg = `Hi! I'd like this model:\n${p.name}\n${p.url}`;
+    const msg =
+`Hi! I'd like this model:
+${p.name}
+${p.url}
+
+Desired size: ______
+Color(s): ______
+Quantity: ______
+Pickup: ${seller.location}`;
+
     const wa = buildWhatsAppLink(seller.phoneE164, msg);
+
+    const imageHtml = p.image
+      ? `<img src="${p.image}" alt="${p.name}" loading="lazy">`
+      : `<div class="imgFallback">No image</div>`;
 
     const card = document.createElement("article");
     card.className = "card";
     card.innerHTML = `
       <div class="thumb">
+        ${imageHtml}
         <span class="badge">${p.source}</span>
       </div>
       <div class="content">
-        <div class="title">${p.name}</div>
-        <div class="desc">${p.notes}</div>
+        <div class="titleRow">
+          <div class="title">${p.name}</div>
+          <div class="price">Pick</div>
+        </div>
+        <div class="desc">${p.notes || ""}</div>
         <div class="actions">
-          <a class="btn" href="${p.url}" target="_blank">Open Model</a>
-          <a class="btn primary" href="${wa}" target="_blank">Request</a>
+          <a class="btn" href="${p.url}" target="_blank" rel="noopener">Open Model</a>
+          <a class="btn primary" href="${wa}" target="_blank" rel="noopener">Request</a>
         </div>
       </div>
     `;
