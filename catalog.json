@@ -18,32 +18,45 @@
       "image": "images/cosplay-helmets.png",
       "description": "Custom cosplay helmets printed on demand. Price depends on model, size. Ask me if I have it, I have too many to list.",
       "tags": ["helmet", "cosplay", "custom"]
-    }
-  ],
-  "community_picks": [
+    },
     {
-      "id": "mw-2230811",
+      "id": "Derpymon",
       "name": "DerpyMon (Pokémon)",
-      "source": "MakerWorld",
-      "url": "https://makerworld.com/en/models/2230811-h2c-u1-pokemon-collection-meowth-lucky-cat-all-sep",
+      "category": "Community",
+      "price": 0,
+      "material": "PLA"
+      "size": "Standard"
+      "leadTimeDays": 2,
+      "featured": false,
       "image": "images/derpyderpy.jpg",
-      "notes": "Multi-part print. Pokémon IP — confirm license before printing."
+      "description": "Funny play on the popular Pokemon franchise, but a little Derpy"
+      "tags": ["pokemon", "funny", "toy"]
     },
     {
-      "id": "mw-2286961",
+      "id": "Flexi-Flag",
       "name": "Flexible Fabric-Style World Flags",
-      "source": "MakerWorld",
-      "url": "https://makerworld.com/en/models/2286961-flexible-fabric-style-world-flags-v2-0",
+      "category": "Community",
+      "price": 0,
+      "material": "PLA"
+      "size": "Standard"
+      "leadTimeDays": 2,
+      "featured": false,
       "image": "images/Flexi-Flags.jpg",
-      "notes": "Great for offices and lockers."
+      "description": "Great for offices and lockers."
+      "tags": ["office", "decoration", "flexible"]
     },
     {
-      "id": "mw-691010",
+      "id": "badge-holder",
       "name": "Modular Badge Holder (CAC/RSA)",
-      "source": "MakerWorld",
-      "url": "https://makerworld.com/en/models/691010-modular-badge-holders-rsa-card",
+      "category": "Community",
+      "price": 0,
+      "material": "PLA"
+      "size": "Standard"
+      "leadTimeDays": 2,
+      "featured": true,
       "image": "images/modularbadges.jpg",
-      "notes": "Perfect for base access cards."
+      "description": "Perfect for base access cards."
+      "tags": ["badge", "cac", "functional"]
     }
   ]
 }
