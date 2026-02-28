@@ -26,7 +26,15 @@ function renderItems(items, seller) {
   status.textContent = `${items.length} item(s) • ${seller.location} • Lead time ${seller.leadTime}`;
 
   for (const item of items) {
-    const msg = `Hi! I'm interested in:\n${item.name}\nPickup: ${seller.location}`;
+    const msg =
+`Hi! I'm interested in:
+${item.name}
+
+Desired size: ______
+Color(s): ______
+Quantity: ______
+Pickup: ${seller.location}`;
+
     const wa = buildWhatsAppLink(seller.phoneE164, msg);
 
     const imageHtml = item.image
@@ -47,7 +55,9 @@ function renderItems(items, seller) {
         </div>
         <div class="desc">${item.description}</div>
         <div class="actions">
-          <a class="btn primary" href="${wa}" target="_blank">Order (WhatsApp)</a>
+          <a class="btn primary" href="${wa}" target="_blank" rel="noopener">
+            Order (WhatsApp)
+          </a>
         </div>
       </div>
     `;
@@ -55,58 +65,46 @@ function renderItems(items, seller) {
   }
 }
 
-function renderPicks(picks, seller) {
-  const grid = document.getElementById("picksGrid");
-  grid.innerHTML = "";
+function applyFilters() {
+  const search = document.getElementById("search").value.toLowerCase();
+  const category = document.getElementById("category").value;
+  const sort = document.getElementById("sort").value;
 
-  for (const p of picks) {
-    const msg =
-`Hi! I'd like this model:
-${p.name}
-${p.url}
+  let items = [...CATALOG.items];
 
-Desired size: ______
-Color(s): ______
-Quantity: ______
-Pickup: ${seller.location}`;
-
-    const wa = buildWhatsAppLink(seller.phoneE164, msg);
-
-    const imageHtml = p.image
-      ? `<img src="${p.image}" alt="${p.name}" loading="lazy">`
-      : `<div class="imgFallback">No image</div>`;
-
-    const card = document.createElement("article");
-    card.className = "card";
-    card.innerHTML = `
-      <div class="thumb">
-        ${imageHtml}
-        <span class="badge">${p.source}</span>
-      </div>
-      <div class="content">
-        <div class="titleRow">
-          <div class="title">${p.name}</div>
-          <div class="price">Pick</div>
-        </div>
-        <div class="desc">${p.notes || ""}</div>
-        <div class="actions">
-          <a class="btn" href="${p.url}" target="_blank" rel="noopener">Open Model</a>
-          <a class="btn primary" href="${wa}" target="_blank" rel="noopener">Request</a>
-        </div>
-      </div>
-    `;
-    grid.appendChild(card);
+  if (category !== "all") {
+    items = items.filter(i => i.category === category);
   }
+
+  if (search) {
+    items = items.filter(i =>
+      `${i.name} ${i.description} ${(i.tags || []).join(" ")}`
+        .toLowerCase()
+        .includes(search)
+    );
+  }
+
+  if (sort === "featured") {
+    items.sort((a, b) => (b.featured === true) - (a.featured === true));
+  } else if (sort === "priceAsc") {
+    items.sort((a, b) => (a.price || 9999) - (b.price || 9999));
+  } else if (sort === "priceDesc") {
+    items.sort((a, b) => (b.price || 0) - (a.price || 0));
+  } else if (sort === "nameAsc") {
+    items.sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  renderItems(items, CATALOG.seller);
 }
 
 async function init() {
-  const res = await fetch("catalog.json");
+  const res = await fetch("catalog.json", { cache: "no-store" });
   CATALOG = await res.json();
 
   const seller = CATALOG.seller;
 
   document.getElementById("waGeneral").href =
-    buildWhatsAppLink(seller.phoneE164, "Hi! I’m browsing your 3D print catalog.");
+    buildWhatsAppLink(seller.phoneE164, "Hi! I'm browsing your 3D print catalog.");
   document.getElementById("callGeneral").href =
     buildTelLink(seller.phoneE164);
   document.getElementById("waCustom").href =
@@ -122,8 +120,11 @@ async function init() {
     catSelect.appendChild(opt);
   }
 
-  renderItems(CATALOG.items, seller);
-  renderPicks(CATALOG.community_picks || [], seller);
+  document.getElementById("search").addEventListener("input", applyFilters);
+  document.getElementById("category").addEventListener("change", applyFilters);
+  document.getElementById("sort").addEventListener("change", applyFilters);
+
+  applyFilters();
 }
 
 init();
