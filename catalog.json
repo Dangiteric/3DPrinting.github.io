@@ -30,7 +30,7 @@
       "featured": false,
       "image": "images/derpyderpy.jpg",
       "description": "Funny play on the popular Pokemon franchise, but a little Derpy",
-      "tags": ["pokemon", "funny", "toy"]
+      "tags": ["pokemon", "funny", "toy"],
       "options": {
         "DerpyMon": [
           "Pikachu",
