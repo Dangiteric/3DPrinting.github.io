@@ -147,6 +147,35 @@ body {
   background:linear-gradient(135deg,var(--accent),var(--accent2));
   border:none;
 }
+/* Option dropdowns on item cards */
+.optionsWrap{
+  margin-top: 8px;
+  display: grid;
+  gap: 8px;
+}
+
+.optLabel{
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.optSelect{
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(17,24,42,.7);
+  color: var(--text);
+  outline: none;
+}
+
+/* Disabled order button until selection made */
+.btn.disabled{
+  opacity: .55;
+  filter: grayscale(.2);
+  pointer-events: none;
+}
 
 .footerCard {
   margin-top:24px;
