@@ -201,8 +201,18 @@
       "leadTimeDays": 2,
       "featured": true,
       "image": "images/modularbadges.jpg",
-      "description": "Perfect for base access cards.",
-      "tags": ["badge", "cac", "functional"]
+      "description": "Perfect for base access cards. Holds 2 cards.",
+      "tags": ["badge", "cac", "functional"],
+      "options": {
+        "Type": [
+          "Simple",
+          "Geometric",
+          "Geometric-2",
+          "Spiral",
+          "RSA-Circle",
+          "RSA-Triangle"
+        ]
+      }
     },
     { 
       "id": "tcg-keychain",
