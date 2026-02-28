@@ -31,6 +31,22 @@
       "image": "images/derpyderpy.jpg",
       "description": "Funny play on the popular Pokemon franchise, but a little Derpy",
       "tags": ["pokemon", "funny", "toy"]
+      "options": {
+        "DerpyMon": [
+          "Pikachu",
+          "Bulbasuar",
+          "Squirtle",
+          "Charmander",
+          "Psyduck",
+          "Gengar",
+          "Slowpoke",
+          "Eevee",
+          "Snorlax",
+          "Mewtwo",
+          "Mew",
+          "Meowth"
+        ]
+      }  
     },
     {
       "id": "Flexi-Flag",
