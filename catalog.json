@@ -45,7 +45,9 @@
           "Mewtwo",
           "Mew",
           "Meowth" 
-      },
+        ]
+      }
+    },
     {
       "id": "Flexi-Flag",
       "name": "Flexible Fabric-Style World Flags",
